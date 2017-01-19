@@ -1,0 +1,79 @@
+html, body {
+	font-size: 100%;
+}
+
+.container {
+	display: flex;
+	height: 100%;
+}
+
+.blockLeft {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid green;
+	width: 40%;
+	padding: .8rem;
+}
+
+.blockRight {
+	border: 1px solid blue;
+	flex-grow: 2;
+	flex-shrink: 1;
+}
+
+.blockLeft .containerInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.containerInfo .myProfileImage {
+	width: 30%;
+	height: 30%;
+	border-radius: 100%;
+}
+
+.containerInfo .myName {
+	font-size: 1.9rem;
+	font-weight: bold;
+	margin: .5em 0 .2em;
+}
+
+.containerInfo .myRole {
+	font-style: italic;
+	font-size: 1rem
+}
+
+.blockMySocialMedias {
+	margin: 2em 0 4em;
+}
+
+	.blockMySocialMedias .medias {
+		display: flex;
+	}
+		.blockMySocialMedias .medias li {
+			margin: 0 1.3em;
+		}
+
+	.social-icon {
+		color : #000;
+	}
+
+	.social-icon:hover {
+		color : #ff0000;
+	}
+
+.aboutMe {
+	padding: .5rem;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.profile .profileTitle {
+	font-size: .9rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 1.5em;
+}
