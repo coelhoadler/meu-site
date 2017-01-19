@@ -16,12 +16,6 @@ html, body {
 	padding: .8rem;
 }
 
-.fa-thank {
-	color : #f44336;
-	margin-left: .5em;
-	cursor: pointer;
-}
-
 .blockRight {
 	display: flex;
 	flex-direction: column;
@@ -164,7 +158,7 @@ html, body {
 }
 
 	.contactInfo .fa-contact {
-		font-size: .9rem
+		font-size: .8rem
 	}
 
 	.contactInfo li {
