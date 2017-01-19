@@ -11,15 +11,18 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border: 1px solid green;
-	width: 40%;
+	/*border: 1px solid green;*/
+	width: 30%;
 	padding: .8rem;
 }
 
 .blockRight {
-	border: 1px solid blue;
+	display: flex;
+	flex-direction: column;
+	/*border: 1px solid blue;*/
 	flex-grow: 2;
 	flex-shrink: 1;
+	padding: .8rem;
 }
 
 .blockLeft .containerInfo {
@@ -29,8 +32,8 @@ html, body {
 }
 
 .containerInfo .myProfileImage {
-	width: 30%;
-	height: 30%;
+	width: 35%;
+	height: 35%;
 	border-radius: 100%;
 }
 
@@ -46,7 +49,7 @@ html, body {
 }
 
 .blockMySocialMedias {
-	margin: 2em 0 4em;
+	margin: 2em 0 2.5em;
 }
 
 	.blockMySocialMedias .medias {
@@ -61,19 +64,52 @@ html, body {
 	}
 
 	.social-icon:hover {
+		transition: .9s;
 		color : #ff0000;
 	}
 
 .aboutMe {
-	padding: .5rem;
+	padding: .9rem;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
 
-.profile .profileTitle {
-	font-size: .9rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	margin-bottom: 1.5em;
+.aboutMe section {
+	margin-bottom: 2.5em;
 }
+
+.aboutMe p {
+	margin-left: 1.5em;
+	text-align: justify;
+}
+
+.profile .blockIconTitle {
+	display: flex;
+	align-items: center;
+	margin-bottom: .8em;
+}
+
+.profile .blockIconTitle .blockIcon {
+	margin-right: .8em;
+	margin-left: .5em;	
+}
+
+.profile .blockIconTitle .profileTitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.profile .profileText {
+	line-height: 1.5rem;
+	font-style: italic;
+}
+
+	.profile .profileText:before {
+		content: '"';
+	}
+
+	.profile .profileText:after {
+		content: '"';
+	}
