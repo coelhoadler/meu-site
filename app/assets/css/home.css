@@ -1,5 +1,6 @@
 html, body {
 	font-size: 100%;
+	font-family: 'Slabo 27px', serif;
 }
 
 .container {
@@ -23,6 +24,22 @@ html, body {
 	cursor: pointer;
 }
 
+a.resume {
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-decoration: none;
+	color: #757575;
+	cursor: pointer;
+	margin: .9em 1.9em;
+}
+	
+	a.resume:hover {
+		transition: .9s;
+		color : #212121;
+		text-decoration: underline;
+	}
+
 .blockRight {
 	display: flex;
 	flex-direction: column;
@@ -36,6 +53,10 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
+	color: #757575;
+	font-family: 'Jockey One', sans-serif;
+	letter-spacing: .1ch;
 }
 
 .containerInfo .myProfileImage {
@@ -49,15 +70,17 @@ html, body {
 	font-size: 1.9rem;
 	font-weight: bold;
 	margin: .5em 0 .2em;
+	color: #424242;
 }
 
 .containerInfo .myRole {
 	font-style: italic;
-	font-size: 1rem
+	font-size: 1rem;
+	font-family: 'Slabo 27px', serif;
 }
 
 .blockMySocialMedias {
-	margin: 2em 0 1.1em;
+	margin: 1.5em 0 1.1em;
 }
 
 	.blockMySocialMedias .medias {
@@ -68,12 +91,12 @@ html, body {
 		}
 
 	.social-icon {
-		color : #000;
+		color : #757575;
 	}
 
 	.social-icon:hover {
 		transition: .9s;
-		color : #ccc;
+		color : #212121;
 	}
 
 .aboutMe {
@@ -81,6 +104,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	color: #424242;
 }
 
 .aboutMe section {
@@ -107,11 +131,15 @@ html, body {
 	font-size: 1.1rem;
 	font-weight: bold;
 	text-transform: capitalize;
+	color: #212121;
+	letter-spacing: .1ch;
+	font-family: 'Jockey One', sans-serif;
 }
 
 .profile .profileText {
 	line-height: 1.5rem;
 	font-style: italic;
+	color: #212121;
 }
 
 	.profile .profileText:before {
@@ -131,7 +159,7 @@ html, body {
 	.profile .mySkills .containerBar {
 		height: 9px;
 		width: 100%;
-		background-color: #ccc;
+		background-color: #9E9E9E;
 	}
 
 	.profile .mySkills li {
@@ -141,11 +169,12 @@ html, body {
 	.profile .mySkills .containerBar .fillBar {
 		margin-top: .5em;
 		height: 100%;
-		background-color: #000;
+		background-color: #616161;
 	}	
 
 	.mySkills .skill span {
 		font-style: italic;
+		color: #212121;
 	}
 
 	.fill10 {width: 10%;}
@@ -155,6 +184,8 @@ html, body {
 	.fill50 {width: 50%;}
 	.fill60 {width: 60%;}
 	.fill70 {width: 70%;}
+	.fill72 {width: 72%;}
+	.fill79 {width: 79%;}
 	.fill80 {width: 80%;}
 	.fill90 {width: 90%;}
 	.fill100 {width: 100%;}
@@ -163,6 +194,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	margin-left: 1.8rem;
+	color: #212121;
 }
 
 	.contactInfo .fa-contact {
@@ -191,6 +223,23 @@ html, body {
 	display: flex;
 	flex-direction: column;
 }
+	
+	.myTimeline .myExperiences .dividerYear:first-child {
+		margin: 1.8em 0;
+	}
+
+	.myTimeline .myExperiences .dividerYear {
+		margin: .9em 0;
+		font-style: italic;
+		text-align: center;
+		color: #757575;
+	}	
+
+	.myTimeline .myExperiences .dividerYear hr {
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(117, 117, 117, 0.75), rgba(0, 0, 0, 0));
+	}
 
 .myTimeline .myExperiences li:first-child {
 	margin-top: .8em;
@@ -199,39 +248,60 @@ html, body {
 .myTimeline .myExperiences .job {
 	margin-bottom: .8em;
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
+	color: #212121;
 }
 
 .myTimeline .myExperiences .job .jobDate {
-	margin-right: .9em;
+	margin-right: 1.9em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-right: .6em;
+	font-style: italic;
+	font-size: .8em;
+}
+
+.myTimeline .myExperiences .job .jobDate .end.current {
+	color: #607D8B;
 }
 
 	.myTimeline .myExperiences .job .jobDate .init {
 		margin-bottom: .5em;
+		color: #4CAF50;
+	}
+
+	.myTimeline .myExperiences .job .jobDate .end {
+		color: #9E9E9E;
 	}
 
 .myTimeline .myExperiences li .jobTitle {
 	font-weight: bold;
 	font-size: 1.2rem;
 	margin: .2em 0;
+	color: #212121;
+	font-family: 'Jockey One', sans-serif;
+	letter-spacing: .1ch;
 }
 
 .myTimeline .myExperiences li .jobCompany {
 	font-weight: lighter;
 	font-size:1rem;
 	text-transform: capitalize;
-	margin: 0 0 .2em;
-	color: #ccc;
+	margin: .6em 0 .4em;
+	color: #424242;
 }
+
+	.myTimeline .myExperiences li .jobCompany a {
+		color: inherit;
+	}
 
 .myTimeline .myExperiences li .jobDescription {
 	text-align: justify;
 	margin: .2em 0;
-	line-height: 1.5em;
+	line-height: 1.6em;
+	color: #212121;
 }
 
 /*page footer*/
@@ -246,5 +316,16 @@ footer.pageFooter {
 }
 
 footer.pageFooter .content {
-	margin: .9em 1.5em;
+	margin: .9em 1.9em;
+}
+
+.iconColor {
+	color: #212121!important;
+}
+
+@media (max-width: 769px) {
+	body {
+		visibility: hidden;
+		overflow: hidden;
+	}
 }
