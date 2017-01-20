@@ -1,0 +1,70 @@
+Desenvolvedor Front-End
+Pagare
+Janeiro/2017 - Atual
+BLÁ BLÁ BLÁ 
+
+Desenvolvedor Web / Mobile
+Conta própria
+Julho/2016 - Atual
+Nesse meio termo que estou à procura por oportunidades na área de TI, estou realizando
+trabalhos como freelancer, no que diz respeito à aplicações híbridas e sistemas web, além
+de estar estudando e me atualizando constantemente com as novas tecnologias do
+mercado.
+Também estou me dedicando no meu Projeto de TCC, meu grupo é formado por 4
+pessoas, porém como eu possuo mais facilidade com desenvolvimento, estou responsável
+por construir o nosso aplicativo móvel para a plataforma Android, cuja tecnologia utilizada
+é o Ionic framework. Como o Ionic é um framework para desenvolvimento híbrido, utilizo os
+mais avançados conceitos de HTML5, CSS3 e em javascript estou utilizando o AngularJS
+para controle de rotas e requisições do app.
+
+Desenvolvedor Front-end Júnior
+Vagalume Mídia
+janeiro/2016 - Julho/2016
+Estou tendo o privilégio de trabalhar em uma empresa de grande visibilidade nacional e até
+mesmo
+internacional, empenhando o papel com o desenvolvimento de UX (User
+eXperience). Meu objetivo é construir e otimizar recursos no desenvolvimento dos projetos
+passados, para assim ter uma melhor resposta final do usuário (em termos de
+funcionalidade e experiência de uso); Com o tempo estou aprendendo a ter mais atenção
+na parte de UI, visto que é um ponto de extrema importância para conseguirmos
+aumentar a produtividade da nossa equipe e assim minimizar os erros de operação do
+usuário, trazendo uma aparência mais clara e objetiva. Além de participar do
+desenvolvimento de Back ​ -end, com o suporte da linguagem PHP. Tecnologias como:HTML5, CSS3, Javascript, AngularJS, Docker,DynamoDB (noSQL), GIT, MySQL, Nginx, Redis,AWS Services, Gulp entre outras foram utilizadas.
+
+Desenvolvedor Java Web Júnior
+Stefanini, cliente: Usiminas
+Fevereiro/2015 – Fevereiro/2016
+Realizando as mesmas atividades que foram feitas durante o período de estágio na
+Stefanini (Usiminas), porém com um maior envolvimento e comprometimento nas
+atividades. Meu maior foco está sendo concentrado em realizar atividades genéricas que
+possam ser utilizadas pelos usuários do ambiente Usiminas. As tarefas estão sendo
+realizadas com o auxílio
+do JSF 2.2, json ( ​ para serialização das informações ), CSS3 e
+HTML5. Em outras palavras, meu trabalho foi concentrado em trabalhar com assuntos
+relacionados a arquitetura da empresa, tanto para desktop como mobile.
+
+Estagiário de Desenvolvimento Java Web
+Stefanini, cliente: Usiminas
+Fevereiro/2014 – Fevereiro/2015
+No decorrer do trabalho obtive experiências com a tecnologia Java, voltada para o
+ambiente web (JEE), usando todos os recursos e as peculiaridades que a linguagem é
+capaz de nos oferecer utilizando o ambiente integrado à frameworks de aplicação, sendo
+ele o JSF, nas versões 1.2 e o 2.2. Para assim, tornar as nossas aplicações mais
+agradáveis e intuitivas para o usuário, foi apresentado os frameworks de componentes
+RichFaces e PrimeFaces. O RichFaces foi usado com a versão mais antiga e o
+Primefaces, com a mais recente do JSF. Posso citar as diversas ferramentas que foram
+utilizadas no decorrer do estágio como: HTML5, CSS3, JavaScript, jQuery, XML, entre
+outras. Como banco de dados, foi utilizado o Oracle 10/11g. Onde realizei as sintaxes de
+query mais comuns utilizadas no dia a dia de um profissional e até mesmo consultas e
+queries complexas, além de analisar códigos PL/SQL. Também aprendi configurações
+básicas no console administrativo, do ambiente de aplicação Websphere.
+
+Desenvolvedor Web Júnior
+MM Santos Informática
+Fevereiro/2011 – Outubro/2013
+Comecei na empresa como estagiário no setor de TI, nessa época estava cursando o
+ensino técnico de informática e foi um ótimo complemento para minha formação
+profissional, pois não tinha noção de como aplicar o que estava aprendendo, no mundo
+real. Exerci cerca de 6 meses como estagiário e ao final do curso, recebi a proposta de
+ficar como efetivo na empresa. Lá usávamos a linguagem ASP e PHP. Além de todas as
+tecnologias que são recursos da web. Como base de dados foi utilizado o SQL Server.

@@ -12,6 +12,7 @@ html, body {
 	flex-direction: column;
 	align-items: center;
 	/*border: 1px solid green;*/
+	min-width: 30%;
 	width: 30%;
 	padding: .8rem;
 }
@@ -38,9 +39,10 @@ html, body {
 }
 
 .containerInfo .myProfileImage {
-	width: 35%;
-	height: 35%;
+	width: 220px;
+	min-width: 110px;
 	border-radius: 100%;
+	-moz-border-radius: 100%;
 }
 
 .containerInfo .myName {
@@ -71,7 +73,7 @@ html, body {
 
 	.social-icon:hover {
 		transition: .9s;
-		color : green;
+		color : #ccc;
 	}
 
 .aboutMe {
@@ -185,9 +187,55 @@ html, body {
 	margin-right: 1.5rem;
 }
 
+.myTimeline .myExperiences {
+	display: flex;
+	flex-direction: column;
+}
+
+.myTimeline .myExperiences li:first-child {
+	margin-top: .8em;
+}
+
+.myTimeline .myExperiences .job {
+	margin-bottom: .8em;
+	display: flex;
+	flex-direction: row;	
+}
+
+.myTimeline .myExperiences .job .jobDate {
+	margin-right: .9em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+	.myTimeline .myExperiences .job .jobDate .init {
+		margin-bottom: .5em;
+	}
+
+.myTimeline .myExperiences li .jobTitle {
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin: .2em 0;
+}
+
+.myTimeline .myExperiences li .jobCompany {
+	font-weight: lighter;
+	font-size:1rem;
+	text-transform: capitalize;
+	margin: 0 0 .2em;
+	color: #ccc;
+}
+
+.myTimeline .myExperiences li .jobDescription {
+	text-align: justify;
+	margin: .2em 0;
+	line-height: 1.5em;
+}
+
 /*page footer*/
 footer.pageFooter {
-	height: 50px;
 	width: 100vw;
 	display: flex;
 	align-items: center;
@@ -198,5 +246,5 @@ footer.pageFooter {
 }
 
 footer.pageFooter .content {
-	margin: 1.5em;
+	margin: .9em 1.5em;
 }
