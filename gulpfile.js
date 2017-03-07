@@ -1,18 +1,6 @@
-/*
-
-    Gulpfile de exemplo para algumas ações clássicas de otimização.
-    
-    Para aprender mais sobre Gulp, veja o Curso Online de Gulp do Alura:
-
-        https://www.alura.com.br/curso-online-gulp
-
- */
-
-
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')({rename: {'gulp-rev-delete-original':'revdel', 'gulp-if': 'if'}});
-
-
+var gulp = require('gulp')
+,   $ = require('gulp-load-plugins')({rename: {'gulp-rev-delete-original':'revdel', 'gulp-if': 'if'}})
+,   browserSync = require("browser-sync")
 
 /* Tasks base */
 gulp.task('copy', function() {
@@ -26,6 +14,23 @@ gulp.task('clean', function() {
 });
 
 
+// Using gulp plugin for sass
+gulp.task('sass', function () {
+    return gulp.src('src/scss/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('src/css'));
+});
+
+// Using browser-sync for refresh my page at dev developing 
+gulp.task('default', function () {
+    browserSync.init({
+        server: {
+            baseDir: 'app'
+        }
+    });
+});
 
 /* Minificação */
 gulp.task('minify-js', function() {
@@ -46,8 +51,6 @@ gulp.task('minify-html', function() {
     .pipe(gulp.dest('public/'))
 });
 
-
-
 /* Concatenação */
 gulp.task('useref', function () {
     return gulp.src('app/index.html')
@@ -58,8 +61,6 @@ gulp.task('useref', function () {
         .pipe($.if('*.css', $.cssnano({safe: true})))
         .pipe(gulp.dest('public'));
 });
-
-
 
 /* Imagens */
 gulp.task('imagemin', function() {
@@ -73,8 +74,6 @@ gulp.task('imagemin', function() {
         }))
         .pipe(gulp.dest('public/assets/img'));
 });
-
-
 
 /* Revisão de arquivos */
 gulp.task('rev', function(){
@@ -95,11 +94,14 @@ gulp.task('revreplace', ['rev'], function(){
     .pipe(gulp.dest('public/'));
 });
 
-
-
 /* Alias */
 gulp.task('minify', ['minify-js', 'minify-css', 'minify-html']);
 gulp.task('build', $.sequence(['minify-js', 'minify-css', 'imagemin'], 'useref', 'revreplace'));
-gulp.task('default', $.sequence('clean', 'copy', 'build'));
+//gulp.task('default', $.sequence('clean', 'copy', 'build'));
 
+// Events watch
+gulp.watch("app/**/*").on('change', function () {
+    browserSync.reload();
+});
 
+gulp.watch("app/scss/**/*.scss", ["sass"]);

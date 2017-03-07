@@ -1,0 +1,22 @@
+{
+  "name": "adler-coelho-santos",
+  "description": "my website",
+  "main": "gulpfile.js",
+  "authors": [
+    "Adler Coelho Santos"
+  ],
+  "license": "ISC",
+  "homepage": "https://meu-site-5f4d8.firebaseapp.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2"
+  }
+}
