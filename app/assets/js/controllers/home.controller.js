@@ -7,7 +7,9 @@
     function HomeController(HomeService) {
         HomeService.getProfile().then(function(response) {
             if (response.status === 200) {
+                console.log('resposta', response);
                 vm.data = response.data;
+                vm.loader = false;
             } else {
                 console.error(response.status + ' - ' + response.statusText);
             }
@@ -16,7 +18,7 @@
         });
 
         var vm = this;
-        vm.loader = false;
+        vm.loader = true;
         vm.data = {};
     }
 

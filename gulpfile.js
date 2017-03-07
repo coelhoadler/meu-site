@@ -1,5 +1,8 @@
 var gulp = require('gulp')
 ,   $ = require('gulp-load-plugins')({rename: {'gulp-rev-delete-original':'revdel', 'gulp-if': 'if'}})
+,   sass = require('gulp-sass')
+,   cssmin = require('gulp-cssmin')
+,   rename = require('gulp-rename')
 ,   browserSync = require("browser-sync")
 
 /* Tasks base */
@@ -16,11 +19,11 @@ gulp.task('clean', function() {
 
 // Using gulp plugin for sass
 gulp.task('sass', function () {
-    return gulp.src('src/scss/**/*.scss')
+    return gulp.src('app/assets/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('src/css'));
+        .pipe(gulp.dest('app/assets/css'));
 });
 
 // Using browser-sync for refresh my page at dev developing 
@@ -104,4 +107,4 @@ gulp.watch("app/**/*").on('change', function () {
     browserSync.reload();
 });
 
-gulp.watch("app/scss/**/*.scss", ["sass"]);
+gulp.watch("app/assets/scss/**/*.scss", ["sass"]);
