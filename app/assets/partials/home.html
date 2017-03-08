@@ -5,7 +5,7 @@
             <img src="{{cv.data.thumb}}" class="myProfileImage" alt="Foto do Adler" title="It's me!" />
             <h1 class="myName">{{cv.data.name}}</h1>
             <p class="myRole">{{cv.data.role}}</p>
-
+            <!--social medias-->
             <div class="blockMySocialMedias">
                 <ul class="medias">
                     <li>
@@ -50,35 +50,12 @@
                     </div>
                     <h1 class="title">{{cv.data.personalSkill.title}}</h1>
                 </div>
+                <!--skills-->
                 <ul class="mySkills">
-                    <li class="skill">
-                        <span>Front-End (HTML5, CSS3, JavaScript)</span>
+                    <li class="skill" ng-repeat="skill in cv.data.personalSkill" ng-if="cv.isObject(skill)">
+                        <span>{{skill.name}}</span>
                         <div class="containerBar">
-                            <div class="fillBar fill90"></div>
-                        </div>
-                    </li>
-                    <li class="skill">
-                        <span>AngularJS 1.x.x</span>
-                        <div class="containerBar">
-                            <div class="fillBar fill90"></div>
-                        </div>
-                    </li>
-                    <li class="skill">
-                        <span>AngularJS 2.x.x / TypeScript</span>
-                        <div class="containerBar">
-                            <div class="fillBar fill60"></div>
-                        </div>
-                    </li>
-                    <li class="skill">
-                        <span>Gulp</span>
-                        <div class="containerBar">
-                            <div class="fillBar fill79"></div>
-                        </div>
-                    </li>
-                    <li class="skill">
-                        <span>Node JS</span>
-                        <div class="containerBar">
-                            <div class="fillBar fill72"></div>
+                            <div class="fillBar fill{{skill.value}}"></div>
                         </div>
                     </li>
                 </ul>
@@ -109,9 +86,8 @@
 
     <!-- meu currículo -->
     <div class="blockRight">
-
         <a class="resume" href="https://firebasestorage.googleapis.com/v0/b/meu-site-5f4d8.appspot.com/o/documents%2FCurr%C3%ADculo%20Adler%20Coelho%20Santos.pdf?alt=media&token=56996a95-9094-4d84-8385-6d63420abf54"
-            target="_blank" title="Meu Currículo em PDF">Currículo Completo</a>
+            target="_blank" title="Meu Currículo em PDF">Meu Currículo</a>
             <div class="containerExperiences">
                 <div class="titleIconExperiencesContainer">
                     <div class="iconExperiences">
@@ -124,7 +100,6 @@
 
                 <section class="myTimeline">
                     <ul class="myExperiences">
-
                         <div ng-repeat="job in cv.data.experience.company">
                             <div class="dividerYear">
                                 <h1>{{job.year}}</h1>
@@ -132,13 +107,18 @@
                             </div>                            
                             <li class="job">
                                 <div class="jobDate">
-                                    <p class="init">Jan/2017</p>
-                                    <p class="end current">atual</p>
+                                    <span class="init" title="Data inicial">{{job.start_date}}</span> - <span class="end current" title="Data de saída">{{job.final_date}}</span>
                                 </div>
-
                                 <div>
-                                    <h1 class="jobTitle">{{job.roleName}}</h1>
-                                    <h2 class="jobCompany"><a href="{{job.company.site}}" target="_blank">{{job.company.name}}</a></h2>
+                                    <div class="blockImage">
+                                        <div>
+                                            <img ng-src="{{job.company.thumb}}" alt="{{job.company.name}}">
+                                        </div>
+                                        <div>
+                                            <h1 class="jobTitle">{{job.roleName}}</h1>
+                                            <h2 class="jobCompany"><a href="{{job.company.site}}" target="_blank">{{job.company.name}}</a></h2>
+                                        </div>
+                                    </div>
                                     <p class="jobDescription">{{job.description}}</p>
                                 </div>
                             </li>
@@ -149,7 +129,6 @@
             </div>
     </div>
 </main>
-
 <footer class="pageFooter">
     <div class="content">
         <!--<i class="fa fa-heart fa-lg fa-thank" title="Agradecimentos"></i>-->

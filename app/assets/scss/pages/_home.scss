@@ -19,85 +19,78 @@ html, body {
 }
 
 .fa-thank {
-	color : #f44336;
+	color : $red;
 	margin-left: .5em;
 	cursor: pointer;
 }
 
-a.resume {
-	position: absolute;
-	right: 0;
-	top: 0;
-	text-decoration: none;
-	color: #757575;
-	cursor: pointer;
-	margin: .9em 1.9em;
-}
-	
-	a.resume:hover {
-		transition: .9s;
-		color : #212121;
-		text-decoration: underline;
+a {
+	&.resume {
+		position: absolute;
+		right: 0;
+		top: 0;
+		text-decoration: none;
+		cursor: pointer;
+		margin: .9em 1.9em;
 	}
+}
 
 .blockRight {
 	display: flex;
 	flex-direction: column;
-	/*border: 1px solid blue;*/
 	flex-grow: 2;
 	flex-shrink: 1;
 	padding: 3rem 7rem;
 }
 
-.blockLeft .containerInfo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	color: #757575;
-	font-family: 'Jockey One', sans-serif;
-	letter-spacing: .1ch;
-}
-
-.containerInfo .myProfileImage {
-	width: 220px;
-	min-width: 110px;
-	border-radius: 100%;
-	-moz-border-radius: 100%;
-}
-
-.containerInfo .myName {
-	font-size: 1.9rem;
-	font-weight: bold;
-	margin: .5em 0 .2em;
-	color: #424242;
-}
-
-.containerInfo .myRole {
-	font-style: italic;
-	font-size: 1rem;
-	font-family: 'Slabo 27px', serif;
+.blockLeft {
+	.containerInfo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		color: #757575;
+		font-family: 'Jockey One', sans-serif;
+		letter-spacing: .1ch;
+		.myProfileImage {
+			min-height: 220px;
+			width: 220px;
+			min-width: 110px;
+			border-radius: 100%;
+			-moz-border-radius: 100%;
+		}
+		.myName {
+			font-size: 1.9rem;
+			font-weight: bold;
+			margin: .5em 0 .2em;
+			color: #424242;
+		}
+		.myRole {
+			font-style: italic;
+			font-size: 1rem;
+			font-family: 'Slabo 27px', serif;
+		}
+	}
 }
 
 .blockMySocialMedias {
 	margin: 1.5em 0 1.1em;
-}
 
-	.blockMySocialMedias .medias {
+	.medias {
 		display: flex;
-	}
-		.blockMySocialMedias .medias li {
+		li {
 			margin: 0 1.3em;
-		}
+		}		
+	}
 
 	.social-icon {
 		color : #757575;
+		&:hover {
+			transition: .9s;
+			color : #212121;
+		}
 	}
-
-	.social-icon:hover {
-		transition: .9s;
-		color : #212121;
-	}
+}
 
 .aboutMe {
 	padding: .9rem;
@@ -105,15 +98,13 @@ a.resume {
 	flex-direction: column;
 	width: 100%;
 	color: #424242;
-}
-
-.aboutMe section {
-	margin-bottom: 2em;
-}
-
-.aboutMe p {
-	margin-left: 1.5em;
-	text-align: justify;
+	section {
+		margin-bottom: 2em;
+	}
+	p {
+		margin-left: 1.5em;
+		text-align: justify;
+	}	
 }
 
 .profile .blockIconTitle {
@@ -195,137 +186,144 @@ a.resume {
 	flex-direction: column;
 	margin-left: 1.8rem;
 	color: #212121;
-}
-
-	.contactInfo .fa-contact {
+	.fa-contact {
 		font-size: .9rem
 	}
-
-	.contactInfo li {
+	li {
 		margin: .5em 0; 
+		i {
+			margin-right: .5em; 
+		}
+		a {
+			text-decoration: none;
+		}
 	}
-
-	.contactInfo li i {
-		margin-right: .5em; 
-	}
+}
 
 /*right content*/
-.containerExperiences .titleIconExperiencesContainer {
-	display: flex;
-	align-items: center;
-}
-
-.containerExperiences .iconExperiences {
-	margin-right: 1.5rem;
-}
-
-.myTimeline .myExperiences {
-	display: flex;
-	flex-direction: column;
-}
-	
-	.myTimeline .myExperiences .dividerYear:first-child {
-		margin: 1.8em 0;
+.containerExperiences {
+	.titleIconExperiencesContainer {
+		display: flex;
+		align-items: center;
 	}
-
-	.myTimeline .myExperiences .dividerYear {
-		margin: .9em 0;
-		font-style: italic;
-		text-align: center;
-		color: #757575;
+	.iconExperiences {
+		margin-right: 1.5rem;
 	}	
+}
 
-	.myTimeline .myExperiences .dividerYear hr {
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(117, 117, 117, 0.75), rgba(0, 0, 0, 0));
+.containerExperiences 
+
+.myTimeline {
+	.myExperiences {
+		display: flex;
+		flex-direction: column;
+		.dividerYear:first-child {
+			margin: 1.8em 0;
+		}
+		.dividerYear {
+			margin: .9em 0;
+			font-style: italic;
+			text-align: center;
+			color: #757575;
+			hr {
+				border: 0;
+				height: 1px;
+				background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(117, 117, 117, 0.75), rgba(0, 0, 0, 0));
+			}
+		}
+		.job {
+			margin-bottom: .8em;
+			display: flex;
+			flex-direction: row;
+			color: #212121;
+			.jobDate {
+				margin-right: 1.9em;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding-right: .6em;
+				font-style: italic;
+				font-size: .8em;
+				.end {
+					color: #9E9E9E;
+					&.current {
+						color: #607D8B;
+					}
+				}
+				.init {
+					margin-bottom: .5em;
+					color: #4CAF50;
+				}				
+			}			
+		}
+		li {
+			&:first-child {
+				margin-top: .8em;
+			}
+			.blockImage {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				img {
+					margin-right: 1rem;
+					width: 32px;
+					border-radius: 50%;
+				}
+			}
+			.jobTitle {
+				font-weight: bold;
+				font-size: 1.2rem;
+				margin: .2em 0;
+				color: #212121;
+				font-family: 'Jockey One', sans-serif;
+				letter-spacing: .1ch;
+			}
+			.jobCompany {
+				font-weight: lighter;
+				font-size:1rem;
+				text-transform: capitalize;
+				margin: .6em 0 .4em;
+				color: #424242;
+				a {
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+			.jobDescription {
+				text-align: justify;
+				margin: .2em 0;
+				line-height: 1.6em;
+				color: #212121;
+			}			
+		}
 	}
-
-.myTimeline .myExperiences li:first-child {
-	margin-top: .8em;
-}
-
-.myTimeline .myExperiences .job {
-	margin-bottom: .8em;
-	display: flex;
-	flex-direction: row;
-	color: #212121;
-}
-
-.myTimeline .myExperiences .job .jobDate {
-	margin-right: 1.9em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-right: .6em;
-	font-style: italic;
-	font-size: .8em;
-}
-
-.myTimeline .myExperiences .job .jobDate .end.current {
-	color: #607D8B;
-}
-
-	.myTimeline .myExperiences .job .jobDate .init {
-		margin-bottom: .5em;
-		color: #4CAF50;
-	}
-
-	.myTimeline .myExperiences .job .jobDate .end {
-		color: #9E9E9E;
-	}
-
-.myTimeline .myExperiences li .jobTitle {
-	font-weight: bold;
-	font-size: 1.2rem;
-	margin: .2em 0;
-	color: #212121;
-	font-family: 'Jockey One', sans-serif;
-	letter-spacing: .1ch;
-}
-
-.myTimeline .myExperiences li .jobCompany {
-	font-weight: lighter;
-	font-size:1rem;
-	text-transform: capitalize;
-	margin: .6em 0 .4em;
-	color: #424242;
-}
-
-	.myTimeline .myExperiences li .jobCompany a {
-		color: inherit;
-	}
-
-.myTimeline .myExperiences li .jobDescription {
-	text-align: justify;
-	margin: .2em 0;
-	line-height: 1.6em;
-	color: #212121;
 }
 
 /*page footer*/
-footer.pageFooter {
-	width: 100vw;
-	display: flex;
-	align-items: center;
-	flex-direction: row-reverse;
-	bottom: 0;
-	left: 0;
-	position: fixed;
-}
-
-footer.pageFooter .content {
-	margin: .9em 1.9em;
+footer {
+	.pageFooter {
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		.content {
+			margin: .9em 1.9em;
+		}
+	}
 }
 
 .iconColor {
 	color: #212121!important;
 }
 
-@media (max-width: 769px) {
-	body {
-		visibility: hidden;
-		overflow: hidden;
-	}
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
 }

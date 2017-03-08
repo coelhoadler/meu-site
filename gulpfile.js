@@ -27,7 +27,7 @@ gulp.task('sass', function () {
 });
 
 // Using browser-sync for refresh my page at dev developing 
-gulp.task('default', function () {
+gulp.task('server.dev', function () {
     browserSync.init({
         server: {
             baseDir: 'app'
@@ -35,28 +35,36 @@ gulp.task('default', function () {
     });
 });
 
+gulp.task('server.prod', function () {
+    browserSync.init({
+        server: {
+            baseDir: 'public'
+        }
+    });
+});
+
 /* Minificação */
 gulp.task('minify-js', function() {
-  return gulp.src('app/**/*.js')
+  return gulp.src('public/**/*.js')
     .pipe($.uglify())
     .pipe(gulp.dest('public/'))
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('app/**/*.css')
+  return gulp.src('public/**/*.css')
     .pipe($.cssnano({safe: true}))
     .pipe(gulp.dest('public/'))
 });
 
 gulp.task('minify-html', function() {
-  return gulp.src('app/**/*.html')
+  return gulp.src('public/**/*.html')
     .pipe($.htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('public/'))
 });
 
 /* Concatenação */
 gulp.task('useref', function () {
-    return gulp.src('app/index.html')
+    return gulp.src('public/index.html')
         .pipe($.useref())
         .pipe($.if('*.html', $.inlineSource()))
         .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true,removeComments: true})))
@@ -67,7 +75,7 @@ gulp.task('useref', function () {
 
 /* Imagens */
 gulp.task('imagemin', function() {
-    return gulp.src('app/assets/img/*')
+    return gulp.src('public/assets/img/*')
         .pipe($.imagemin({
             progressive: true,
             svgoPlugins: [
@@ -98,9 +106,9 @@ gulp.task('revreplace', ['rev'], function(){
 });
 
 /* Alias */
-gulp.task('minify', ['minify-js', 'minify-css', 'minify-html']);
-gulp.task('build', $.sequence(['minify-js', 'minify-css', 'imagemin'], 'useref', 'revreplace'));
-//gulp.task('default', $.sequence('clean', 'copy', 'build'));
+//gulp.task('minify', $.sequence(['minify-js', 'minify-css', 'minify-html'], 'useref', 'revreplace'));
+gulp.task('build', $.sequence('useref', 'revreplace'));
+gulp.task('default', $.sequence('clean', 'copy', 'build'));
 
 // Events watch
 gulp.watch("app/**/*").on('change', function () {

@@ -3,11 +3,12 @@
     angular
         .module('adler.cv')
         .controller('HomeController', HomeController);
-
+    
+    /* @ngInject */
     function HomeController(HomeService) {
         HomeService.getProfile().then(function(response) {
             if (response.status === 200) {
-                console.log('resposta', response);
+                response.data.experience.company.reverse();
                 vm.data = response.data;
                 vm.loader = false;
             } else {
@@ -20,6 +21,11 @@
         var vm = this;
         vm.loader = true;
         vm.data = {};
+
+        // Verify if the value is a object
+        vm.isObject = value => {
+            return angular.isObject(value);
+        }
     }
 
     HomeController.$inject = ['HomeService'];
