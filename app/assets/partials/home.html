@@ -2,29 +2,29 @@
 <main class="container" ng-show="!cv.loader">
     <div class="blockLeft">
         <div class="containerInfo">
-            <img src="{{cv.data.thumb}}" class="myProfileImage" alt="Foto do Adler" title="It's me!" />
-            <h1 class="myName">{{cv.data.name}}</h1>
-            <p class="myRole">{{cv.data.role}}</p>
+            <img src="{{::cv.data.thumb}}" class="myProfileImage" alt="Foto do Adler" title="It's me!" />
+            <h1 class="myName">{{::cv.data.name}}</h1>
+            <p class="myRole">{{::cv.data.role}}</p>
             <!--social medias-->
             <div class="blockMySocialMedias">
                 <ul class="medias">
                     <li>
-                        <a target="_blank" title="Facebook" href="{{cv.data.contactMe.facebook}}" class="social-icon facebook-icon">
+                        <a target="_blank" title="Facebook" href="{{::cv.data.contactMe.facebook}}" class="social-icon facebook-icon">
                             <i class="fa fa-facebook fa-lg"></i>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" title="Linkedin" href="{{cv.data.contactMe.linkedin}}" class="social-icon linkedin-icon">
+                        <a target="_blank" title="Linkedin" href="{{::cv.data.contactMe.linkedin}}" class="social-icon linkedin-icon">
                             <i class="fa fa-linkedin fa-lg"></i>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" title="GitHub" href="{{cv.data.contactMe.github}}" class="social-icon github-icon">
+                        <a target="_blank" title="GitHub" href="{{::cv.data.contactMe.github}}" class="social-icon github-icon">
                             <i class="fa fa-github fa-lg"></i>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" title="Instagram" href="{{cv.data.contactMe.instagram}}" class="social-icon instagram-icon">
+                        <a target="_blank" title="Instagram" href="{{::cv.data.contactMe.instagram}}" class="social-icon instagram-icon">
                             <i class="fa fa-instagram fa-lg"></i>
                         </a>
                     </li>
@@ -38,9 +38,9 @@
                     <div class="blockIcon">
                         <i class="fa fa-globe fa-lg iconColor"></i>
                     </div>
-                    <h1 class="title">{{cv.data.profile.title}}</h1>
+                    <h1 class="title">{{::cv.data.profile.title}}</h1>
                 </div>
-                <p class="profileText">{{cv.data.profile.description}}</p>
+                <p class="profileText">{{::cv.data.profile.description}}</p>
             </section>
 
             <section class="profile">
@@ -48,14 +48,14 @@
                     <div class="blockIcon">
                         <i class="fa fa-bolt fa-lg iconColor"></i>
                     </div>
-                    <h1 class="title">{{cv.data.personalSkill.title}}</h1>
+                    <h1 class="title">{{::cv.data.personalSkill.title}}</h1>
                 </div>
                 <!--skills-->
                 <ul class="mySkills">
                     <li class="skill" ng-repeat="skill in cv.data.personalSkill" ng-if="cv.isObject(skill)">
-                        <span>{{skill.name}}</span>
+                        <span>{{::skill.name}}</span>
                         <div class="containerBar">
-                            <div class="fillBar fill{{skill.value}}"></div>
+                            <div class="fillBar fill{{::skill.value}}"></div>
                         </div>
                     </li>
                 </ul>
@@ -66,16 +66,16 @@
                     <div class="blockIcon">
                         <i class="fa fa-id-card fa-lg iconColor"></i>
                     </div>
-                    <h1 class="title">{{cv.data.contactMe.title}}</h1>
+                    <h1 class="title">{{::cv.data.contactMe.title}}</h1>
                 </div>
                 <ul class="contactInfo">
                     <li>
                         <i class="fa fa-envelope fa-contact" title="E-mail"></i>
-                        <a href="mailto:{{cv.data.contactMe.email}}?subject=Contato%20via%20site">{{cv.data.contactMe.email}}</a>
+                        <a href="mailto:{{::cv.data.contactMe.email}}?subject=Contato%20via%20site">{{::cv.data.contactMe.email}}</a>
                     </li>
                     <li>
                         <i class="fa fa-whatsapp fa-contact" title="Celular"></i>
-                        <span>{{cv.data.contactMe.tel}}</span>
+                        <span>{{::cv.data.contactMe.tel}}</span>
                     </li>
                 </ul>
             </section>
@@ -86,15 +86,15 @@
 
     <!-- meu currículo -->
     <div class="blockRight">
-        <a class="resume" href="https://firebasestorage.googleapis.com/v0/b/meu-site-5f4d8.appspot.com/o/documents%2FCurr%C3%ADculo%20Adler%20Coelho%20Santos.pdf?alt=media&token=56996a95-9094-4d84-8385-6d63420abf54"
-            target="_blank" title="Meu Currículo em PDF">Meu Currículo</a>
+        <a class="resume" href="{{::cv.data.curriculum_link}}"
+            target="_blank" title="Meu Currículo em PDF">Baixar meu Currículo</a>
             <div class="containerExperiences">
                 <div class="titleIconExperiencesContainer">
                     <div class="iconExperiences">
                         <i class="fa fa-suitcase fa-lg iconColor"></i>
                     </div>
                     <div class="titleExperiences">
-                        <h1 class="title">{{cv.data.experience.title}}</h1>
+                        <h1 class="title">{{::cv.data.experience.title}}</h1>
                     </div>
                 </div>
 
@@ -102,24 +102,24 @@
                     <ul class="myExperiences">
                         <div ng-repeat="job in cv.data.experience.company">
                             <div class="dividerYear">
-                                <h1>{{job.year}}</h1>
+                                <h1>{{::job.year}}</h1>
                                 <hr>
                             </div>                            
                             <li class="job">
                                 <div class="jobDate">
-                                    <span class="init" title="Data inicial">{{job.start_date}}</span> - <span class="end current" title="Data de saída">{{job.final_date}}</span>
+                                    <span class="init" title="Data inicial">{{::job.start_date}}</span> - <span class="end current" title="Data de saída">{{::job.final_date}}</span>
                                 </div>
                                 <div>
                                     <div class="blockImage">
                                         <div>
-                                            <img ng-src="{{job.company.thumb}}" alt="{{job.company.name}}">
+                                            <img ng-src="{{::job.company.thumb}}" alt="{{::job.company.name}}">
                                         </div>
                                         <div>
-                                            <h1 class="jobTitle">{{job.roleName}}</h1>
-                                            <h2 class="jobCompany"><a href="{{job.company.site}}" target="_blank">{{job.company.name}}</a></h2>
+                                            <h1 class="jobTitle">{{::job.roleName}}</h1>
+                                            <h2 class="jobCompany"><a href="{{::job.company.site}}" target="_blank">{{::job.company.name}}</a></h2>
                                         </div>
                                     </div>
-                                    <p class="jobDescription">{{job.description}}</p>
+                                    <p class="jobDescription">{{::job.description}}</p>
                                 </div>
                             </li>
                         </div>
@@ -129,8 +129,9 @@
             </div>
     </div>
 </main>
-<footer class="pageFooter">
+<footer class="pageFooter" ng-if="cv.loader == false">
     <div class="content">
-        <!--<i class="fa fa-heart fa-lg fa-thank" title="Agradecimentos"></i>-->
+        <span>Eu que fiz ;-D</span>
+        <span>@{{::cv.currentYear}}</span>
     </div>
 </footer>

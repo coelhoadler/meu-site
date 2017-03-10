@@ -21,6 +21,7 @@
         var vm = this;
         vm.loader = true;
         vm.data = {};
+        vm.currentYear = new Date().getFullYear();
 
         // Verify if the value is a object
         vm.isObject = value => {
