@@ -106,9 +106,9 @@ gulp.task('revreplace', ['rev'], function(){
 });
 
 /* Alias */
-//gulp.task('minify', $.sequence(['minify-js', 'minify-css', 'minify-html'], 'useref', 'revreplace'));
+gulp.task('minify-files', $.sequence(['minify-js', 'minify-css', 'minify-html'], 'useref', 'revreplace'));
 gulp.task('build', $.sequence('useref', 'revreplace'));
-gulp.task('default', $.sequence('clean', 'copy', 'build'));
+gulp.task('default', $.sequence('clean', 'copy', ['minify-js'], 'build'));
 
 // Events watch
 gulp.watch("app/**/*").on('change', function () {
