@@ -1,6 +1,7 @@
-node_modules/
-bower_components/
-public/
-app/assets/lib/
-.firebaserc
-database.rules.json
+./node_modules/
+./bower_components/
+./public/
+./app/assets/lib/
+./.firebaserc
+./firebase.json
+./database.rules.json
