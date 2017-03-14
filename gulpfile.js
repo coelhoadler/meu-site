@@ -108,7 +108,7 @@ gulp.task('revreplace', ['rev'], function(){
 /* Alias */
 gulp.task('minify-files', $.sequence(['minify-js', 'minify-css', 'minify-html'], 'useref', 'revreplace'));
 gulp.task('build', $.sequence('useref', 'revreplace'));
-gulp.task('default', $.sequence('clean', 'copy', ['minify-js'], 'build'));
+gulp.task('default', $.sequence('clean', 'copy'));
 
 // Events watch
 gulp.watch("app/**/*").on('change', function () {

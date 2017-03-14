@@ -2,7 +2,7 @@
 <main class="container" ng-show="!cv.loader">
     <div class="blockLeft">
         <div class="containerInfo">
-            <img src="{{::cv.data.thumb}}" class="myProfileImage" alt="Foto do Adler" title="It's me!" />
+            <img ng-src="assets/img/me2.jpg" class="myProfileImage" alt="Foto do Adler" title="It's me!" />
             <h1 class="myName">{{::cv.data.name}}</h1>
             <p class="myRole">{{::cv.data.role}}</p>
             <!--social medias-->
@@ -112,7 +112,7 @@
                                 <div>
                                     <div class="blockImage">
                                         <div>
-                                            <img ng-src="{{::job.company.thumb}}" alt="{{::job.company.name}}">
+                                            <img ng-src="assets/img/jobs/{{::job.company.thumb}}.png" alt="{{::job.company.name}}">
                                         </div>
                                         <div>
                                             <h1 class="jobTitle">{{::job.roleName}}</h1>

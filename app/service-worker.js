@@ -1,0 +1,65 @@
+var versao = 16;
+
+var arquivos = [
+    '/',
+    'assets/css/home.min.css',
+    'assets/css/mobile.min.css',
+    'assets/css/font-awesome-4.7.0/css/font-awesome.min.css',
+    'assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.eot',
+    'assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.svg',
+    'assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf',
+    'assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff',
+    'assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2',
+    'assets/css/font-awesome-4.7.0/fonts/FontAwesome.otf',
+    'manifest.json',
+    'apple-icon-57x57.png',
+    'apple-icon-60x60.png',
+    'apple-icon-72x72.png',
+    'apple-icon-76x76.png',
+    'apple-icon-114x114.png',
+    'apple-icon-120x120.png',
+    'apple-icon-144x144.png',
+    'apple-icon-152x152.png',
+    'apple-icon-180x180.png',
+    'android-icon-192x192.png',
+    'favicon-32x32.png',
+    'favicon-96x96.png',
+    'favicon-16x16.png',
+    'ms-icon-144x144.png',
+    'assets/img/me2.jpg',
+    'assets/img/jobs/mmsantos.png',
+    'assets/img/jobs/pagare.png',
+    'assets/img/jobs/vagalume.png',
+    'assets/img/jobs/stefanini.png',
+    'assets/img/jobs/no-image.png',
+    'assets/lib/angular/angular.min.js',
+    'assets/lib/angular-route/angular-route.min.js',
+    'assets/js/app.js',
+    'assets/js/route-config.js',
+    'assets/js/services/home.service.js',
+    'assets/js/controllers/home.controller.js',
+    'assets/partials/home.html',
+];
+
+self.addEventListener('install', function() {
+    console.log('installing...');
+});
+
+self.addEventListener('activate', function() {
+    caches.open("adler-curriculum-cache-" + versao).then(cache => {
+        cache.addAll(arquivos)
+            .then(function() {
+                caches.delete("adler-curriculum-cache-" + (versao - 1 ));
+                caches.delete("adler-curriculum-cache");
+            })
+    })
+});
+
+self.addEventListener('fetch', function(event) {
+    var pedido = event.request;
+    var promiseResposta = caches.match(pedido).then(respostaCache => {
+        var resposta = respostaCache ? respostaCache : fetch(pedido);
+        return resposta;
+    })
+    event.respondWith(promiseResposta);
+});

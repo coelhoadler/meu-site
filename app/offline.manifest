@@ -1,10 +1,17 @@
 CACHE MANIFEST
 
-#v2
+#v3.3
 
 assets/css/home.min.css
 assets/css/mobile.min.css
 assets/css/font-awesome-4.7.0/css/font-awesome.min.css
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.eot
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.svg
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2
+assets/css/font-awesome-4.7.0/fonts/FontAwesome.otf
+manifest.json
 apple-icon-57x57.png
 apple-icon-60x60.png
 apple-icon-72x72.png
@@ -19,20 +26,26 @@ favicon-32x32.png
 favicon-96x96.png
 favicon-16x16.png
 ms-icon-144x144.png
-
+assets/img/me2.jpg
+assets/img/jobs/mmsantos.png
+assets/img/jobs/pagare.png
+assets/img/jobs/vagalume.png
+assets/img/jobs/stefanini.png
+assets/img/jobs/no-image.png
 assets/lib/angular/angular.min.js
 assets/lib/angular-route/angular-route.min.js
 assets/js/app.js
 assets/js/route-config.js
 assets/js/services/home.service.js
 assets/js/controllers/home.controller.js
-
 assets/partials/home.html
-
-http://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAA2dAAAAJDkyYzZhMjgxLTMxOWYtNDQ2ZC1iYWRjLTAzOTIxMGNiOGFhNg.png
-http://image.freepik.com/free-icon/business-person-silhouette-wearing-tie_318-49988.jpg
-http://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAjtAAAAJDYwNTFiYzFiLWJlYjEtNGJhOS04YWZhLWRjN2JkMWU5YWZmYg.png
-http://www.mmsantos.com.br/images/logo.png
 
 NETWORK:
 *
+
+FALLBACK:
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.eot assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.eot
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.svg assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.svg
+assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf assets/css/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf
+assets/css/font-awesome-4.7.0/fonts/FontAwesome.otf assets/css/font-awesome-4.7.0/fonts/FontAwesome.otf
